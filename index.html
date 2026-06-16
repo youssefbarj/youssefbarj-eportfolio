@@ -185,7 +185,7 @@
                 <p class="mb-2"><span class="font-semibold">Audience:</span> L&amp;D and HR teams spending too many hours on Moodle admin who want to reclaim their week for strategy, content, and people.</p>
                 <p class="mb-2"><span class="font-semibold">Responsibilities:</span> AI agent deployment on client infrastructure, LMS automation workflows, natural-language command configuration, monitoring, backup scheduling.</p>
                 <p class="mb-6"><span class="font-semibold">Tools Used:</span> Hermes Agent, Moodle API, Linux VPS, systemd, Telegram/Slack gateway.</p>
-                <a href="https://t.me/HermesVPS_luxaltbot" target="_blank" rel="noopener" class="inline-block bg-teal text-cream font-semibold px-7 py-2.5 rounded-full hover:bg-teal-dark transition mr-3">Talk to the agent →</a>
+                <a href="https://t.me/HermesVPS_luxaltbot" target="_blank" rel="noopener" class="inline-block bg-teal text-cream font-semibold px-7 py-2.5 rounded-full hover:bg-teal-dark transition mr-3">Talk to the agent on Telegram →</a>
                 <a href="#contact" class="inline-block border border-teal text-teal font-semibold px-7 py-2.5 rounded-full hover:bg-teal/10 transition">Learn More</a>
             </div>
         </div>
@@ -344,15 +344,58 @@ function closeLightbox(){
 </div>
 
 <!-- FLOATING CHAT WIDGET -->
-<div id="chatWidget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
-    <div id="chatBubble" class="hidden bg-cream text-ink rounded-2xl shadow-2xl p-5 mb-3 w-72 max-w-[calc(100vw-3rem)] animate-fadeInUp">
-        <p class="text-sm leading-relaxed mb-3">Talk to Hermes, the AI agent that operates Moodle. Ask me anything about LMS automation.</p>
-        <a href="https://t.me/HermesVPS_luxaltbot" target="_blank" rel="noopener" class="inline-block w-full text-center bg-teal text-cream font-semibold px-4 py-2.5 rounded-full hover:bg-teal-dark transition text-sm">Open chat →</a>
+<div id="chatWidget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div id="chatBox" class="hidden bg-cream text-ink rounded-2xl shadow-2xl mb-3 w-80 max-w-[calc(100vw-2rem)] overflow-hidden flex flex-col" style="height:380px">
+        <div class="bg-teal text-cream px-4 py-3 flex items-center justify-between">
+            <span class="font-semibold text-sm">Talk to Hermes</span>
+            <button onclick="toggleChat()" aria-label="Close chat" class="text-cream/70 hover:text-cream">&times;</button>
+        </div>
+        <div id="chatMessages" class="flex-1 overflow-y-auto p-4 space-y-3 text-sm">
+            <div class="bg-teal/10 rounded-xl p-3 text-ink/80">Hey! I'm Hermes, Youssef's AI agent. Ask me anything about LMS automation, H5P courses, or Moodle hosting.</div>
+        </div>
+        <form onsubmit="sendChat(event)" class="border-t border-ink/10 p-3 flex gap-2">
+            <input id="chatInput" type="text" placeholder="Type a message..." class="flex-1 bg-sage/50 rounded-full px-4 py-2 text-sm border-0 outline-none focus:ring-2 ring-teal/30" autocomplete="off">
+            <button type="submit" class="bg-teal text-cream rounded-full w-9 h-9 flex items-center justify-center hover:bg-teal-dark transition shrink-0">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            </button>
+        </form>
     </div>
-    <button onclick="document.getElementById('chatBubble').classList.toggle('hidden')" aria-label="Chat with Hermes" class="w-14 h-14 rounded-full bg-teal text-cream shadow-xl hover:bg-teal-dark transition flex items-center justify-center">
-        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71l-4.14-3.05-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+    <button onclick="toggleChat()" aria-label="Chat with Hermes" class="w-14 h-14 rounded-full bg-teal text-cream shadow-xl hover:bg-teal-dark transition flex items-center justify-center">
+        <svg id="chatIcon" class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71l-4.14-3.05-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
     </button>
 </div>
+
+<script>
+function toggleChat(){
+    var box = document.getElementById('chatBox');
+    box.classList.toggle('hidden');
+    if(!box.classList.contains('hidden')) document.getElementById('chatInput').focus();
+}
+async function sendChat(e){
+    e.preventDefault();
+    var input = document.getElementById('chatInput');
+    var msg = input.value.trim();
+    if(!msg) return;
+    var msgs = document.getElementById('chatMessages');
+    msgs.innerHTML += '<div class="text-right"><div class="inline-block bg-teal text-cream rounded-xl px-3 py-2 text-sm max-w-[85%]">'+escHtml(msg)+'</div></div>';
+    input.value = '';
+    msgs.scrollTop = msgs.scrollHeight;
+    try {
+        var resp = await fetch('/api/chat', {
+            method:'POST',
+            headers:{'Content-Type':'application/json'},
+            body: JSON.stringify({message:msg})
+        });
+        var data = await resp.json();
+        var reply = data.reply || 'Sorry, something went wrong. Try t.me/HermesVPS_luxaltbot directly.';
+        msgs.innerHTML += '<div class="text-left"><div class="inline-block bg-sage rounded-xl px-3 py-2 text-sm max-w-[85%]">'+escHtml(reply)+'</div></div>';
+    } catch(err) {
+        msgs.innerHTML += '<div class="text-left"><div class="inline-block bg-sage rounded-xl px-3 py-2 text-sm max-w-[85%]">Could not reach the agent. <a href="https://t.me/HermesVPS_luxaltbot" class="text-teal underline">Open in Telegram</a></div></div>';
+    }
+    msgs.scrollTop = msgs.scrollHeight;
+}
+function escHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+</script>
 
 </body>
 </html>
