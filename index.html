@@ -343,5 +343,16 @@ function closeLightbox(){
     <img id="lbImg" src="" alt="" class="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl" onclick="event.stopPropagation()">
 </div>
 
+<!-- FLOATING CHAT WIDGET -->
+<div id="chatWidget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div id="chatBubble" class="hidden bg-cream text-ink rounded-2xl shadow-2xl p-5 mb-3 w-72 max-w-[calc(100vw-3rem)] animate-fadeInUp">
+        <p class="text-sm leading-relaxed mb-3">Talk to Hermes, the AI agent that operates Moodle. Ask me anything about LMS automation.</p>
+        <a href="https://t.me/HermesVPS_luxaltbot" target="_blank" rel="noopener" class="inline-block w-full text-center bg-teal text-cream font-semibold px-4 py-2.5 rounded-full hover:bg-teal-dark transition text-sm">Open chat →</a>
+    </div>
+    <button onclick="document.getElementById('chatBubble').classList.toggle('hidden')" aria-label="Chat with Hermes" class="w-14 h-14 rounded-full bg-teal text-cream shadow-xl hover:bg-teal-dark transition flex items-center justify-center">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71l-4.14-3.05-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+    </button>
+</div>
+
 </body>
 </html>
