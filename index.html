@@ -3,187 +3,344 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Youssef Barj — Instructional Designer</title>
+    <title>Youssef Barj · Instructional Designer</title>
     <link rel="icon" href="yb-favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        navy: '#0d2240',
-                        teal: '#00ABB5',
-                        'teal-dark': '#008a92',
+                        teal:   '#3d6a73',
+                        'teal-dark': '#33585f',
+                        sage:   '#d8e1da',
+                        'sage-deep': '#cdd8cf',
+                        cream:  '#efece2',
+                        ink:    '#1f2d30',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        sans:  ['Inter', 'system-ui', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
     <style>
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fadeInUp { animation: fadeInUp 0.6s ease-out; }
         html { scroll-behavior: smooth; }
-        .h5p-embed { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,171,181,0.15); }
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .font-serif { font-family: 'Playfair Display', Georgia, serif; }
+        @keyframes fadeInUp { from { opacity:0; transform:translateY(24px);} to {opacity:1; transform:translateY(0);} }
+        .reveal { animation: fadeInUp .7s ease-out both; }
+        /* wave dividers */
+        .wave { display:block; width:100%; height:80px; }
+        @media (min-width:768px){ .wave{ height:120px; } }
     </style>
 </head>
-<body class="bg-navy text-white font-sans">
+<body class="bg-sage text-ink">
 
 <!-- NAV -->
-<header class="py-4 px-4 sm:px-6 lg:px-8 fixed w-full z-50 bg-navy/95 backdrop-blur border-b border-white/10">
-    <nav class="flex justify-between items-center max-w-6xl mx-auto">
-        <a href="#" class="text-3xl font-bold text-teal tracking-tight">YB</a>
-        <div class="hidden md:flex items-center space-x-2">
-            <button onclick="showSection('work')" class="nav-btn px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-teal transition" data-en="Work" data-fr="Réalisations">Work</button>
-            <button onclick="showSection('services')" class="nav-btn px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-teal transition" data-en="Services" data-fr="Services">Services</button>
-            <button onclick="showSection('about')" class="nav-btn px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-teal transition" data-en="About" data-fr="À propos">About</button>
-            <button onclick="toggleLang()" class="ml-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-white transition">EN/FR</button>
+<header class="bg-teal text-cream sticky top-0 z-50 border-b border-white/10">
+    <nav class="max-w-6xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
+        <a href="#home" class="flex items-center justify-center w-12 h-12 border border-cream/60 font-serif text-xl tracking-wide">YB</a>
+        <div class="flex items-center gap-6 sm:gap-9 text-sm sm:text-base">
+            <a href="#home" class="hover:underline underline-offset-4 decoration-1">Home</a>
+            <a href="#portfolio" class="hover:underline underline-offset-4 decoration-1">Portfolio</a>
+            <a href="#about" class="hover:underline underline-offset-4 decoration-1">About</a>
+            <a href="#contact" class="hover:underline underline-offset-4 decoration-1">Contact</a>
+            <a href="https://www.linkedin.com/in/youssef-barj/" target="_blank" rel="noopener" aria-label="LinkedIn" class="flex items-center justify-center w-9 h-9 border border-cream/60 hover:bg-cream/10 transition">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.65 4.78 6.1V21H17.6v-5.3c0-1.26-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H10z"/></svg>
+            </a>
         </div>
     </nav>
 </header>
 
 <!-- HERO -->
-<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
-    <section class="text-center animate-fadeInUp">
-        <img src="Barj Edit 2 big cropped.jpg" alt="Youssef Barj" class="w-40 h-40 rounded-full mx-auto mb-8 border-4 border-teal object-cover">
-        <h1 class="text-5xl md:text-6xl font-bold mb-4 tracking-tight">Youssef Barj</h1>
-        <p class="text-2xl text-teal mb-6 max-w-xl mx-auto" data-en="Instructional Designer — interactive, scenario-based training built on open-source tools" data-fr="Concepteur Pédagogique — formations interactives basées sur des outils open-source">Instructional Designer — interactive, scenario-based training built on open-source tools</p>
-        <p class="max-w-xl mx-auto text-gray-400 mb-10 text-lg leading-relaxed" data-en="I build interactive e-learning content — branching scenarios, drag-and-drop exercises, flashcard decks, and full LMS courses — using H5P and Moodle. No licensing fees passed to you. Training that actually changes behavior." data-fr="Je crée du contenu e-learning interactif — scénarios ramifiés, exercices glisser-déposer, flashcards et cours LMS complets — avec H5P et Moodle. Sans frais de licence. Des formations qui changent les comportements.">I build interactive e-learning content — branching scenarios, drag-and-drop exercises, flashcard decks, and full LMS courses — using H5P and Moodle. No licensing fees passed to you. Training that actually changes behavior.</p>
-        <div class="flex flex-wrap justify-center gap-4">
-            <a href="mailto:barjyoussef5@gmail.com" class="bg-teal hover:bg-teal-dark text-navy font-bold py-3 px-8 rounded-full inline-flex items-center transition-colors duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
-                <span data-en="Work with me" data-fr="Travailler avec moi">Work with me</span>
-            </a>
-            <a href="https://cal.com/youssef-barj-meqh5v/30min" class="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-8 rounded-full inline-flex items-center transition-colors duration-300 border border-white/20">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
-                <span data-en="Book a call" data-fr="Réserver un appel">Book a call</span>
-            </a>
+<section id="home" class="bg-teal text-cream">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 pt-16 pb-24 grid md:grid-cols-2 gap-12 items-center reveal">
+        <div>
+            <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl mb-6 leading-tight">Hi, I'm Youssef.</h1>
+            <p class="text-lg sm:text-xl text-cream/85 leading-relaxed max-w-md mb-9">
+                I design interactive, scenario-based training that turns dense material into learning people actually finish, built on open-source tools and hosted on infrastructure you control.
+            </p>
+            <a href="#contact" class="inline-block bg-cream text-teal font-semibold px-8 py-3 rounded-full hover:bg-white transition">Let's Work Together</a>
         </div>
-    </section>
+        <div class="order-first md:order-last">
+            <img src="Barj Edit 2 big cropped.jpg" alt="Youssef Barj" class="w-full max-w-sm mx-auto aspect-[4/5] object-cover rounded-3xl shadow-2xl">
+        </div>
+    </div>
+</section>
 
-    <!-- WORK / H5P DEMOS -->
-    <section id="work" class="py-20">
-        <h2 class="text-3xl font-bold mb-2 text-center" data-en="Selected Work" data-fr="Réalisations">Selected Work</h2>
-        <p class="text-gray-400 text-center mb-12" data-en="Interactive samples — click through to experience each format" data-fr="Échantillons interactifs — cliquez pour découvrir chaque format">Interactive samples — click through to experience each format</p>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Demo cards — replace src with actual H5P embed URLs -->
-            <div class="bg-white/5 rounded-xl p-6 border border-white/10 hover:border-teal/50 transition group">
-                <div class="text-3xl mb-3">🃏</div>
-                <h3 class="font-bold text-lg mb-1">Interactive Flashcards</h3>
-                <p class="text-gray-400 text-sm mb-4">Self-paced knowledge checks with instant feedback — perfect for compliance terms, product knowledge, or language training.</p>
-                <span class="text-teal text-sm font-medium group-hover:underline">Launch demo →</span>
+<!-- wave: teal -> sage -->
+<svg class="wave -mt-px" viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="#3d6a73" d="M0,0 L1440,0 L1440,40 C1080,120 360,0 0,80 Z"/></svg>
+
+<!-- PORTFOLIO -->
+<main id="portfolio">
+
+    <!-- PROJECT 1 -->
+    <section class="max-w-5xl mx-auto px-5 sm:px-8 pt-4 pb-16">
+        <h2 class="font-serif text-3xl sm:text-4xl text-center mb-12">Interactive Course Design</h2>
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div class="rounded-2xl overflow-hidden shadow-lg bg-cream p-4 cursor-zoom-in" onclick="openLightbox('project-course.png')">
+                <img src="project-course.png" alt="Interactive e-learning course built in H5P" class="w-full aspect-[4/3] object-contain">
             </div>
-            <div class="bg-white/5 rounded-xl p-6 border border-white/10 hover:border-teal/50 transition group">
-                <div class="text-3xl mb-3">🔀</div>
-                <h3 class="font-bold text-lg mb-1">Branching Scenario</h3>
-                <p class="text-gray-400 text-sm mb-4">Decision-tree training where learners see consequences of their choices — ideal for sales, customer service, and compliance.</p>
-                <span class="text-teal text-sm font-medium group-hover:underline">Launch demo →</span>
-            </div>
-            <div class="bg-white/5 rounded-xl p-6 border border-white/10 hover:border-teal/50 transition group">
-                <div class="text-3xl mb-3">🧩</div>
-                <h3 class="font-bold text-lg mb-1">Drag & Drop Exercises</h3>
-                <p class="text-gray-400 text-sm mb-4">Hands-on sorting and matching activities — learners organize steps, match terms, or build processes visually.</p>
-                <span class="text-teal text-sm font-medium group-hover:underline">Launch demo →</span>
-            </div>
-            <div class="bg-white/5 rounded-xl p-6 border border-white/10 hover:border-teal/50 transition group">
-                <div class="text-3xl mb-3">🎯</div>
-                <h3 class="font-bold text-lg mb-1">Image Hotspots</h3>
-                <p class="text-gray-400 text-sm mb-4">Clickable info points over images — annotate diagrams, office layouts, software UIs, or product photos.</p>
-                <span class="text-teal text-sm font-medium group-hover:underline">Launch demo →</span>
-            </div>
-            <div class="bg-white/5 rounded-xl p-6 border border-white/10 hover:border-teal/50 transition group">
-                <div class="text-3xl mb-3">📊</div>
-                <h3 class="font-bold text-lg mb-1">Interactive Video</h3>
-                <p class="text-gray-400 text-sm mb-4">Video with embedded quizzes, branching choices, and knowledge checks — learners stay active, not passive.</p>
-                <span class="text-teal text-sm font-medium group-hover:underline">Launch demo →</span>
-            </div>
-            <div class="bg-white/5 rounded-xl p-6 border border-white/10 hover:border-teal/50 transition group">
-                <div class="text-3xl mb-3">📝</div>
-                <h3 class="font-bold text-lg mb-1">Assessments & Quizzes</h3>
-                <p class="text-gray-400 text-sm mb-4">Multiple choice, fill-in-blanks, true/false, and essay prompts with scoring — trackable, exportable results.</p>
-                <span class="text-teal text-sm font-medium group-hover:underline">Launch demo →</span>
+            <div class="text-[15px] leading-relaxed">
+                <h3 class="font-semibold text-lg mb-3">Engaging, interactive eLearning</h3>
+                <p class="mb-4 text-ink/80">
+                    Compliance and onboarding training that teams work through, not click past. I take your policies and source material and turn them into interactive, scenario-based modules that are quick to roll out, easy to update, and accessible from anywhere. Built-in analytics let L&D and HR track progress and completion in real time, see exactly who needs support, and tighten the parts of a course that aren't landing.
+                </p>
+                <p class="mb-4 text-ink/80">
+                    Bespoke to the role means faster learning and better retention, so training translates straight back into how people actually work.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Onboarding</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Compliance &amp; GDPR</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Sales enablement</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Operations &amp; SOPs</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Certifications</span>
+                </div>
+                <p class="mb-2"><span class="font-semibold">Audience:</span> L&amp;D and HR teams in regulated and fast-scaling organizations.</p>
+                <p class="mb-2"><span class="font-semibold">Responsibilities:</span> Instructional design, storyboarding, eLearning development, assessment and certification design.</p>
+                <p class="mb-6"><span class="font-semibold">Tools Used:</span> H5P, Articulate, Figma, SCORM/xAPI.</p>
+                <button onclick="openModal('h5pModal')" class="inline-block bg-teal text-cream font-semibold px-7 py-2.5 rounded-full hover:bg-teal-dark transition">Learn More</button>
             </div>
         </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="py-20 border-t border-white/10">
-        <h2 class="text-3xl font-bold mb-12 text-center" data-en="What I Deliver" data-fr="Ce que je livre">What I Deliver</h2>
-        <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div class="text-center">
-                <div class="text-4xl mb-4">🎓</div>
-                <h3 class="font-bold text-xl mb-3" data-en="Interactive Course Content" data-fr="Contenu de cours interactif">Interactive Course Content</h3>
-                <p class="text-gray-400 text-sm leading-relaxed" data-en="Scenario-based training modules built in H5P — branching scenarios, flashcards, drag-and-drop, quizzes, and 30+ other interactive formats. Delivered as SCORM/xAPI packages that plug into any LMS." data-fr="Modules de formation basés sur des scénarios, construits avec H5P — scénarios ramifiés, flashcards, glisser-déposer, quiz et plus de 30 autres formats interactifs. Livrés en packages SCORM/xAPI compatibles avec tout LMS.">Scenario-based training modules built in H5P — branching scenarios, flashcards, drag-and-drop, quizzes, and 30+ other interactive formats. Delivered as SCORM/xAPI packages that plug into any LMS.</p>
+    <!-- H5P CONTENT TYPES MODAL -->
+    <div id="h5pModal" class="modal fixed inset-0 z-[60] hidden items-center justify-center p-2 bg-black/70 backdrop-blur-sm">
+        <div class="bg-cream rounded-2xl w-full h-[95vh] max-w-7xl overflow-hidden shadow-2xl relative flex flex-col">
+            <button onclick="document.getElementById('h5pFrame').src=H5P_URL" aria-label="Back" class="absolute top-3 left-3 z-10 w-9 h-9 rounded-full bg-teal text-cream flex items-center justify-center hover:bg-teal-dark transition shadow-lg">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5m7-7l-7 7 7 7"/></svg>
+            </button>
+            <button onclick="closeModal('h5pModal')" class="absolute top-3 right-3 z-10 bg-teal text-cream font-semibold px-4 py-2 rounded-full hover:bg-teal-dark transition flex items-center gap-1.5 shadow-lg">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                Close
+            </button>
+            <div class="flex-1 overflow-hidden">
+                <iframe id="h5pFrame" title="H5P Content Types" class="w-full border-0" style="height:calc(100% + 600px);margin-top:-130px;" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
             </div>
-            <div class="text-center">
-                <div class="text-4xl mb-4">🖥️</div>
-                <h3 class="font-bold text-xl mb-3" data-en="Private Moodle Hosting" data-fr="Hébergement Moodle Privé">Private Moodle Hosting</h3>
-                <p class="text-gray-400 text-sm leading-relaxed" data-en="I set up and host a dedicated Moodle LMS for you on a private EU VPS — your data, your server, your control. Includes course structuring, user enrollment, progress tracking, and completion reports. No SaaS lock-in." data-fr="Je configure et héberge un LMS Moodle dédié pour vous sur un VPS privé européen — vos données, votre serveur, votre contrôle. Inclut la structuration des cours, l'inscription des utilisateurs, le suivi des progrès et les rapports.">I set up and host a dedicated Moodle LMS for you on a private EU VPS — your data, your server, your control. Includes course structuring, user enrollment, progress tracking, and completion reports. No SaaS lock-in.</p>
+        </div>
+    </div>
+
+    <!-- subtle divider -->
+    <div class="max-w-5xl mx-auto px-5 sm:px-8"><div class="h-px bg-ink/15"></div></div>
+
+    <!-- PROJECT 2 -->
+    <section class="max-w-5xl mx-auto px-5 sm:px-8 pt-16 pb-20">
+        <h2 class="font-serif text-3xl sm:text-4xl text-center mb-12">Self-Hosted Moodle LMS</h2>
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div class="rounded-2xl overflow-hidden shadow-lg bg-cream p-4 cursor-zoom-in" onclick="openLightbox('project-moodle.png')">
+                <img src="project-moodle.png" alt="Self-hosted Moodle LMS dashboard" class="w-full aspect-[4/3] object-contain">
             </div>
-            <div class="text-center">
-                <div class="text-4xl mb-4">🔧</div>
-                <h3 class="font-bold text-xl mb-3" data-en="Instructional Design" data-fr="Conception Pédagogique">Instructional Design</h3>
-                <p class="text-gray-400 text-sm leading-relaxed" data-en="Needs analysis, storyboarding, content structuring, and assessment design. I turn your subject-matter expertise into structured learning paths that actually change behavior — not just slides." data-fr="Analyse des besoins, storyboarding, structuration du contenu et conception d'évaluations. Je transforme votre expertise en parcours d'apprentissage structurés qui changent les comportements.">Needs analysis, storyboarding, content structuring, and assessment design. I turn your subject-matter expertise into structured learning paths that actually change behavior — not just slides.</p>
+            <div class="text-[15px] leading-relaxed">
+                <h3 class="font-semibold text-lg mb-3">A private LMS you fully own</h3>
+                <p class="mb-4 text-ink/80">
+                    I set up, configure, and host a dedicated Moodle LMS on a private EU server, so your courses and your learner data stay entirely under your control. That covers course architecture, enrollment, live progress analytics, audit-ready completion reports, and automatic certificates, with H5P content embedded directly and BigBlueButton wired in for live virtual classrooms.
+                </p>
+                <p class="mb-4 text-ink/80">
+                    No SaaS lock-in, no per-seat licensing, no surprise renewal. You keep the platform and everything in it.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">LMS setup</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Live analytics</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Virtual classrooms</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Data sovereignty</span>
+                </div>
+                <p class="mb-2"><span class="font-semibold">Audience:</span> Organizations that need a trackable, compliant LMS without recurring SaaS fees.</p>
+                <p class="mb-2"><span class="font-semibold">Responsibilities:</span> Server setup, Moodle administration, course architecture, analytics and reporting, virtual classroom integration.</p>
+                <p class="mb-6"><span class="font-semibold">Tools Used:</span> Moodle, Linux VPS, H5P, BigBlueButton, SCORM/xAPI.</p>
+                <a href="#contact" class="inline-block bg-teal text-cream font-semibold px-7 py-2.5 rounded-full hover:bg-teal-dark transition">Learn More</a>
             </div>
         </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="py-20 border-t border-white/10">
-        <div class="max-w-2xl mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-8" data-en="About" data-fr="À propos">About</h2>
-            <p class="text-gray-300 leading-relaxed mb-6 text-lg" data-en="I design and build interactive training for companies that need engaging, trackable e-learning without the Articulate price tag. My stack is H5P (50+ interactive content types) + Moodle (the world's most widely used open-source LMS), hosted on private EU infrastructure so your training data stays sovereign." data-fr="Je conçois et construis des formations interactives pour les entreprises qui ont besoin d'e-learning engageant et traçable sans le prix d'Articulate. Ma stack : H5P (plus de 50 types de contenu interactif) + Moodle (le LMS open-source le plus utilisé au monde), hébergé sur une infrastructure européenne privée.">I design and build interactive training for companies that need engaging, trackable e-learning without the Articulate price tag. My stack is H5P (50+ interactive content types) + Moodle (the world's most widely used open-source LMS), hosted on private EU infrastructure so your training data stays sovereign.</p>
-            <p class="text-gray-400 text-sm" data-en="Based in Casablanca · Working remotely with clients worldwide · English & French" data-fr="Basé à Casablanca · Travail à distance avec des clients dans le monde entier · Anglais & Français">Based in Casablanca · Working remotely with clients worldwide · English & French</p>
+    <!-- subtle divider -->
+    <div class="max-w-5xl mx-auto px-5 sm:px-8"><div class="h-px bg-ink/15"></div></div>
+
+    <!-- PROJECT 3 -->
+    <section class="max-w-5xl mx-auto px-5 sm:px-8 pt-16 pb-20">
+        <h2 class="font-serif text-3xl sm:text-4xl text-center mb-12">AI-Operated LMS Administration</h2>
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div class="rounded-2xl overflow-hidden shadow-lg bg-cream p-4 cursor-zoom-in" onclick="openLightbox('project-agent.png')">
+                <img src="project-agent.png" alt="AI agent managing Moodle — natural language commands to automate admin" class="w-full aspect-[4/3] object-contain">
+            </div>
+            <div class="text-[15px] leading-relaxed">
+                <h3 class="font-semibold text-lg mb-3">Stop clicking. Start talking to your LMS.</h3>
+                <p class="mb-4 text-ink/80">
+                    The average L&D team spends 40% of its week on LMS admin — creating courses, enrolling users, pulling reports, resetting passwords, sending reminders. A dedicated AI agent handles all of that, 24/7, on your own private server. You type "enroll the new sales cohort in GDPR refresher, due Friday, send me completion stats Monday morning" — and it's done. No clicks. No screens. No waiting for IT.
+                </p>
+                <p class="mb-4 text-ink/80">
+                    The agent runs on your infrastructure, learning your workflows over time. Course rollouts, cohort assignments, certificate generation, compliance audits, scheduled backups — all automated. And because it's connected to the learner data, it can also tutor employees one-on-one: answer questions, explain concepts they struggled with, recommend next modules. Same agent, two jobs.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-5">
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">LMS admin automation</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Plain-language commands</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Auto enrollment &amp; reporting</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">AI learner tutor</span>
+                </div>
+                <p class="mb-2"><span class="font-semibold">Audience:</span> L&amp;D and HR teams spending too many hours on Moodle admin who want to reclaim their week for strategy, content, and people.</p>
+                <p class="mb-2"><span class="font-semibold">Responsibilities:</span> AI agent deployment on client infrastructure, LMS automation workflows, natural-language command configuration, monitoring, backup scheduling.</p>
+                <p class="mb-6"><span class="font-semibold">Tools Used:</span> Hermes Agent, Moodle API &amp; web services, Linux VPS, systemd, Telegram/Slack gateway.</p>
+                <a href="#contact" class="inline-block bg-teal text-cream font-semibold px-7 py-2.5 rounded-full hover:bg-teal-dark transition">Learn More</a>
+            </div>
         </div>
     </section>
-
-    <!-- CONTACT -->
-    <section class="py-20 border-t border-white/10 text-center">
-        <h2 class="text-3xl font-bold mb-6" data-en="Let's work together" data-fr="Travaillons ensemble">Let's work together</h2>
-        <p class="text-gray-400 mb-8 max-w-md mx-auto" data-en="I'm available for freelance instructional design projects, H5P course builds, and Moodle LMS setups. Book a call or email me." data-fr="Je suis disponible pour des projets de conception pédagogique, de création de cours H5P et de configuration Moodle LMS. Réservez un appel ou envoyez-moi un email.">I'm available for freelance instructional design projects, H5P course builds, and Moodle LMS setups. Book a call or email me.</p>
-        <div class="flex flex-wrap justify-center gap-4">
-            <a href="https://cal.com/youssef-barj-meqh5v/30min" class="bg-teal hover:bg-teal-dark text-navy font-bold py-3 px-8 rounded-full transition-colors">Book a call →</a>
-            <a href="mailto:barjyoussef5@gmail.com" class="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-8 rounded-full transition-colors border border-white/20">barjyoussef5@gmail.com</a>
-        </div>
-    </section>
-
-    <footer class="text-center text-gray-500 text-sm pb-8">
-        Youssef Barj · Casablanca · <span data-en="Instructional Designer" data-fr="Concepteur Pédagogique">Instructional Designer</span>
-    </footer>
 </main>
 
+<!-- ABOUT -->
+<section id="about" class="bg-sage-deep">
+    <div class="max-w-5xl mx-auto px-5 sm:px-8 py-20 grid md:grid-cols-[1fr_minmax(0,320px)] gap-12 items-start">
+        <div>
+            <h2 class="font-serif text-4xl mb-8">About Me</h2>
+
+            <h3 class="font-serif text-xl mb-3 border-b border-ink/20 pb-1 inline-block">Professional</h3>
+            <p class="text-[15px] leading-relaxed text-ink/85 mb-6">
+                I'm an instructional designer who builds engaging, trackable e-learning for organizations that want real results without enterprise licensing costs. I work from your own policies and subject-matter expertise, turning them into interactive courses with built-in analytics, completion tracking, and certification. My stack is H5P paired with self-hosted Moodle, the most widely used open-source LMS in the world, running on private European infrastructure so your data stays sovereign. The aim is always the same: learning that changes how people work, not slides they forget.
+            </p>
+
+            <h3 class="font-serif text-xl mb-3 border-b border-ink/20 pb-1 inline-block">Personal</h3>
+            <p class="text-[15px] leading-relaxed text-ink/85 mb-8">
+                Based in Casablanca, I work remotely with clients across Europe and beyond, in English and French. I'm genuinely curious about how people learn and what makes a lesson stick, and I'd rather ship one module that actually lands than ten that get clicked through and forgotten.
+            </p>
+
+            <a href="#contact" class="inline-block bg-teal text-cream font-semibold px-8 py-3 rounded-full hover:bg-teal-dark transition">Let's Work Together</a>
+        </div>
+        <div>
+            <img src="Barj Edit 2 big cropped.jpg" alt="Youssef Barj" class="w-full rounded-2xl object-cover aspect-[4/5] shadow-lg">
+            <p class="text-center text-sm text-ink/60 mt-3 italic">Casablanca · Remote worldwide</p>
+        </div>
+    </div>
+</section>
+
+<!-- wave: sage -> contact -->
+<svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="#cdd8cf" d="M0,0 C360,120 1080,0 1440,80 L1440,0 Z"/></svg>
+
+<!-- CONTACT / BOOK -->
+<section id="contact" class="bg-sage">
+    <div class="max-w-2xl mx-auto px-5 sm:px-8 py-20 text-center">
+        <h2 class="font-serif text-4xl sm:text-5xl mb-5">Let's work together.</h2>
+        <p class="text-ink/75 mb-10 leading-relaxed max-w-md mx-auto">
+            Pick whatever's easiest: book a quick call, message me on Telegram, connect on LinkedIn, or send an email.
+        </p>
+        <div class="grid sm:grid-cols-2 gap-4 max-w-md mx-auto">
+            <button onclick="openModal('calModal')" class="flex items-center justify-center gap-2 bg-teal text-cream font-semibold px-6 py-4 rounded-full hover:bg-teal-dark transition">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zM4 8h12v8H4V8z" clip-rule="evenodd"/></svg>
+                Book a 15-min call
+            </button>
+            <button onclick="openModal('tgModal')" class="flex items-center justify-center gap-2 bg-teal text-cream font-semibold px-6 py-4 rounded-full hover:bg-teal-dark transition">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71l-4.14-3.05-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+                Telegram
+            </button>
+            <a href="https://www.linkedin.com/in/youssef-barj" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 bg-teal text-cream font-semibold px-6 py-4 rounded-full hover:bg-teal-dark transition">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.65 4.78 6.1V21H17.6v-5.3c0-1.26-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H10z"/></svg>
+                LinkedIn
+            </a>
+            <a href="mailto:barjyoussef5@gmail.com" class="flex items-center justify-center gap-2 bg-teal text-cream font-semibold px-6 py-4 rounded-full hover:bg-teal-dark transition">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+                Email me
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- CAL MODAL -->
+<div id="calModal" class="modal fixed inset-0 z-[60] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+    <div class="bg-cream rounded-2xl w-full max-w-3xl overflow-hidden shadow-2xl relative">
+        <button onclick="closeModal('calModal')" aria-label="Close" class="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-teal text-cream flex items-center justify-center hover:bg-teal-dark transition">&times;</button>
+        <iframe id="calFrame" title="Book a 15-minute call" class="w-full" style="height:70vh; border:0;" loading="lazy"></iframe>
+    </div>
+</div>
+
+<!-- TELEGRAM MODAL -->
+<div id="tgModal" class="modal fixed inset-0 z-[60] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+    <div class="bg-cream text-ink rounded-2xl w-full max-w-lg p-8 text-center shadow-2xl relative">
+        <button onclick="closeModal('tgModal')" aria-label="Close" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-teal text-cream flex items-center justify-center hover:bg-teal-dark transition">&times;</button>
+        <h3 class="font-serif text-2xl mb-2">Message me on Telegram</h3>
+        <p class="text-ink/70 text-sm mb-5">Scan the code, or tap below to open a chat.</p>
+        <img src="telegram-qr.png" alt="Telegram QR code" class="w-80 h-80 mx-auto rounded-xl mb-5">
+        <a href="https://t.me/+212714085869" target="_blank" rel="noopener" class="inline-block bg-teal text-cream font-semibold px-7 py-3 rounded-full hover:bg-teal-dark transition mb-3">Open Telegram chat</a>
+        <p class="text-ink/60 text-sm">+212 714 08 58 69</p>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-teal text-cream border-t-2 border-black/30">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 py-14 flex flex-col items-center gap-8 sm:flex-row sm:justify-center sm:gap-12">
+        <a href="#home" class="flex items-center justify-center w-12 h-12 border border-cream/60 font-serif text-lg tracking-wide shrink-0">YB</a>
+        <nav class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 font-semibold text-base">
+            <a href="#home" class="hover:underline underline-offset-4">Home</a>
+            <a href="#portfolio" class="hover:underline underline-offset-4">Portfolio</a>
+            <a href="#about" class="hover:underline underline-offset-4">About</a>
+            <a href="#contact" class="hover:underline underline-offset-4">Contact</a>
+        </nav>
+        <a href="https://www.linkedin.com/in/youssef-barj/" target="_blank" rel="noopener" aria-label="LinkedIn" class="flex items-center justify-center w-10 h-10 border border-cream/60 hover:bg-cream/10 transition shrink-0">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.65 4.78 6.1V21H17.6v-5.3c0-1.26-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H10z"/></svg>
+        </a>
+    </div>
+</footer>
+
 <script>
-// Section switching
-function showSection(id) {
-    document.querySelectorAll('section[id]').forEach(s => {
-        if (s.id === id) {
-            s.classList.remove('hidden');
-            s.classList.add('animate-fadeInUp');
-            s.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    });
-    // Highlight active nav button
-    document.querySelectorAll('.nav-btn').forEach(b => {
-        b.classList.toggle('text-teal', document.querySelector(`[data-en="${b.dataset.en}"]`) && b.getAttribute('onclick').includes(id));
-    });
+var CAL_URL = 'https://cal.com/youssef-barj-meqh5v/15min';
+var H5P_URL = 'https://h5p.org/content-types-and-applications';
+function openModal(id){
+    var m = document.getElementById(id);
+    if(id === 'calModal'){
+        var f = document.getElementById('calFrame');
+        if(!f.src) f.src = CAL_URL;
+    }
+    if(id === 'h5pModal'){
+        var h = document.getElementById('h5pFrame');
+        if(!h.src) h.src = H5P_URL;
+    }
+    m.classList.remove('hidden');
+    m.classList.add('flex');
+    document.body.style.overflow = 'hidden';
 }
-
-// Language toggle
-let lang = 'en';
-function toggleLang() {
-    lang = lang === 'en' ? 'fr' : 'en';
-    document.querySelectorAll('[data-en][data-fr]').forEach(el => {
-        el.textContent = el.dataset[lang];
-    });
-    localStorage.setItem('lang', lang);
+function closeModal(id){
+    var m = document.getElementById(id);
+    m.classList.add('hidden');
+    m.classList.remove('flex');
+    document.body.style.overflow = '';
 }
+// close on backdrop click
+document.querySelectorAll('.modal').forEach(function(m){
+    m.addEventListener('click', function(e){ if(e.target === m) closeModal(m.id); });
+});
+// close on Escape
+document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+        document.querySelectorAll('.modal').forEach(function(m){
+            if(!m.classList.contains('hidden')) closeModal(m.id);
+        });
+        closeLightbox();
+    }
+});
 
-// Restore saved language
-const saved = localStorage.getItem('lang');
-if (saved) { lang = saved; toggleLang(); }
+// Lightbox for project images
+function openLightbox(src){
+    var lb = document.getElementById('imgLightbox');
+    var img = document.getElementById('lbImg');
+    img.src = src;
+    lb.classList.remove('hidden');
+    lb.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+}
+function closeLightbox(){
+    var lb = document.getElementById('imgLightbox');
+    lb.classList.add('hidden');
+    lb.classList.remove('flex');
+    document.body.style.overflow = '';
+}
 </script>
+
+<!-- IMAGE LIGHTBOX -->
+<div id="imgLightbox" class="modal fixed inset-0 z-[70] hidden items-center justify-center p-4 bg-black/85 backdrop-blur-sm" onclick="closeLightbox()">
+    <img id="lbImg" src="" alt="" class="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl" onclick="event.stopPropagation()">
+</div>
 
 </body>
 </html>
