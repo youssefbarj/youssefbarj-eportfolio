@@ -153,10 +153,26 @@
                 <p class="mb-2"><span class="font-semibold">Audience:</span> Organizations that need a trackable, compliant LMS without recurring SaaS fees.</p>
                 <p class="mb-2"><span class="font-semibold">Responsibilities:</span> Server setup, Moodle administration, course architecture, analytics and reporting, virtual classroom integration.</p>
                 <p class="mb-6"><span class="font-semibold">Tools Used:</span> Moodle, Linux VPS, H5P, BigBlueButton, SCORM/xAPI.</p>
-                <a href="#contact" class="inline-block bg-teal text-cream font-semibold px-7 py-2.5 rounded-full hover:bg-teal-dark transition">Learn More</a>
+                <button onclick="openModal('moodleModal')" class="inline-block bg-teal text-cream font-semibold px-7 py-2.5 rounded-full hover:bg-teal-dark transition">Learn More</button>
             </div>
         </div>
     </section>
+
+    <!-- MOODLE DEMO MODAL -->
+    <div id="moodleModal" class="modal fixed inset-0 z-[60] hidden items-center justify-center p-2 bg-black/70 backdrop-blur-sm">
+        <div class="bg-cream rounded-2xl w-full h-[95vh] max-w-7xl overflow-hidden shadow-2xl relative flex flex-col">
+            <button onclick="document.getElementById('moodleFrame').src=MOODLE_URL" aria-label="Back" class="absolute top-3 left-3 z-10 w-9 h-9 rounded-full bg-teal text-cream flex items-center justify-center hover:bg-teal-dark transition shadow-lg">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5m7-7l-7 7 7 7"/></svg>
+            </button>
+            <button onclick="closeModal('moodleModal')" class="absolute top-3 right-3 z-10 bg-teal text-cream font-semibold px-4 py-2 rounded-full hover:bg-teal-dark transition flex items-center gap-1.5 shadow-lg">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                Close
+            </button>
+            <div class="flex-1 overflow-hidden">
+                <iframe id="moodleFrame" title="Moodle LMS Demo" class="w-full h-full border-0" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
+            </div>
+        </div>
+    </div>
 
     <!-- subtle divider -->
     <div class="max-w-5xl mx-auto px-5 sm:px-8"><div class="h-px bg-ink/15"></div></div>
@@ -287,6 +303,7 @@
 <script>
 var CAL_URL = 'https://cal.com/youssef-barj-meqh5v/15min';
 var H5P_URL = 'https://h5p.org/content-types-and-applications';
+var MOODLE_URL = 'http://51.170.143.201';
 function openModal(id){
     var m = document.getElementById(id);
     if(id === 'calModal'){
@@ -296,6 +313,10 @@ function openModal(id){
     if(id === 'h5pModal'){
         var h = document.getElementById('h5pFrame');
         if(!h.src) h.src = H5P_URL;
+    }
+    if(id === 'moodleModal'){
+        var f2 = document.getElementById('moodleFrame');
+        if(!f2.src) f2.src = MOODLE_URL;
     }
     m.classList.remove('hidden');
     m.classList.add('flex');
