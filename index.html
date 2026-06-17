@@ -526,10 +526,10 @@ function escHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace
 
     var reply;
     try{
-      var resp = await fetch('http://167.71.66.198:8888',{
+      var resp = await fetch('/api/chat',{
         method:'POST',
         headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({message:msg, origin:'portfolio'})
+        body:JSON.stringify({message:msg})
       });
       var data = await resp.json();
       reply = data.reply || 'I can tell you more about Youssef\'s work. Try asking about his services!';
