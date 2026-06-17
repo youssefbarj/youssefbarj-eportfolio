@@ -49,6 +49,7 @@
         <div class="flex items-center gap-6 sm:gap-9 text-sm sm:text-base">
             <a href="#home" class="hover:underline underline-offset-4 decoration-1">Home</a>
             <a href="#portfolio" class="hover:underline underline-offset-4 decoration-1">Portfolio</a>
+            <a href="#certifications" class="hover:underline underline-offset-4 decoration-1">Certifications</a>
             <a href="#about" class="hover:underline underline-offset-4 decoration-1">About</a>
             <a href="#contact" class="hover:underline underline-offset-4 decoration-1">Contact</a>
             <a href="https://www.linkedin.com/in/youssef-barj/" target="_blank" rel="noopener" aria-label="LinkedIn" class="flex items-center justify-center w-9 h-9 border border-cream/60 hover:bg-cream/10 transition">
@@ -193,6 +194,37 @@
                 <p class="mb-6"><span class="font-semibold">Tools Used:</span> Hermes Agent, Moodle API, Linux VPS, systemd, Telegram/Slack gateway.</p>
                 <a href="https://t.me/HermesVPS_luxaltbot" target="_blank" rel="noopener" class="inline-block bg-teal text-cream font-semibold px-7 py-2.5 rounded-full hover:bg-teal-dark transition mr-3">Talk to the agent on Telegram →</a>
                 <a href="#contact" class="inline-block border border-teal text-teal font-semibold px-7 py-2.5 rounded-full hover:bg-teal/10 transition">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="max-w-5xl mx-auto px-5 sm:px-8 pt-16 pb-20">
+        <h2 class="font-serif text-3xl sm:text-4xl text-center mb-10">Certifications</h2>
+        <div class="grid sm:grid-cols-2 gap-6">
+            <div class="bg-cream border border-ink/10 rounded-2xl p-6">
+                <p class="text-xs font-semibold text-teal uppercase tracking-wide mb-1">University of Illinois Urbana-Champaign</p>
+                <h3 class="font-semibold text-lg mb-1">Instructional Design Foundations and Applications</h3>
+                <p class="text-ink/60 text-sm mb-3">Instructional Design · Coursera</p>
+                <a href="https://www.coursera.org/account/accomplishments/verify/XE66A2U4JPCU" target="_blank" rel="noopener" class="text-teal text-sm font-medium hover:underline">Credential ID: XE66A2U4JPCU</a>
+            </div>
+            <div class="bg-cream border border-ink/10 rounded-2xl p-6">
+                <p class="text-xs font-semibold text-teal uppercase tracking-wide mb-1">Arizona State University</p>
+                <h3 class="font-semibold text-lg mb-1">Teach English Now! Technology Enriched Teaching</h3>
+                <p class="text-ink/60 text-sm mb-3">Educational Technology · Coursera</p>
+                <a href="https://www.coursera.org/account/accomplishments/verify/4MK7CX7Q6ED9" target="_blank" rel="noopener" class="text-teal text-sm font-medium hover:underline">Credential ID: 4MK7CX7Q6ED9</a>
+            </div>
+            <div class="bg-cream border border-ink/10 rounded-2xl p-6">
+                <p class="text-xs font-semibold text-teal uppercase tracking-wide mb-1">Google Career Certificates</p>
+                <h3 class="font-semibold text-lg mb-1">Google Project Management: Professional Certificate (CAPM)</h3>
+                <p class="text-ink/60 text-sm mb-3">Project Management · Coursera</p>
+                <a href="https://www.coursera.org/account/accomplishments/verify/9FLWDRHUJJ82" target="_blank" rel="noopener" class="text-teal text-sm font-medium hover:underline">Credential ID: 9FLWDRHUJJ82</a>
+            </div>
+            <div class="bg-cream border border-ink/10 rounded-2xl p-6">
+                <p class="text-xs font-semibold text-teal uppercase tracking-wide mb-1">Vanderbilt University</p>
+                <h3 class="font-semibold text-lg mb-1">AI Prompt Engineering</h3>
+                <p class="text-ink/60 text-sm mb-3">Artificial Intelligence · Coursera Specialization</p>
+                <a href="https://www.coursera.org/account/accomplishments/specialization/D8D2G8YH7G8R" target="_blank" rel="noopener" class="text-teal text-sm font-medium hover:underline">Credential ID: D8D2G8YH7G8R</a>
             </div>
         </div>
     </section>
@@ -401,6 +433,122 @@ async function sendChat(e){
     msgs.scrollTop = msgs.scrollHeight;
 }
 function escHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+</script>
+
+<!-- PORTFOLIO AI CHAT WIDGET -->
+<script>
+(function(){
+  var style = document.createElement('style');
+  style.textContent = '.ph-hidden{display:none!important}';
+  document.head.appendChild(style);
+
+  var wrapper = document.createElement('div');
+  wrapper.style.cssText = 'position:fixed!important;bottom:24px!important;right:24px!important;z-index:99999!important;font-family:Inter,system-ui,sans-serif!important';
+  document.body.appendChild(wrapper);
+
+  var bubble = document.createElement('div');
+  wrapper.appendChild(bubble);
+  bubble.style.cssText = 'width:56px!important;height:56px!important;border-radius:50%!important;background:#3d6a73!important;color:#efece2!important;border:none!important;cursor:pointer!important;box-shadow:0 4px 16px rgba(0,0,0,0.2)!important;font-size:24px!important;display:flex!important;align-items:center!important;justify-content:center!important;transition:transform 0.2s!important';
+  bubble.textContent = '💬';
+  bubble.onmouseover = function(){ this.style.transform='scale(1.1)'; };
+  bubble.onmouseout = function(){ this.style.transform='scale(1)'; };
+
+  var panel = document.createElement('div');
+  wrapper.appendChild(panel);
+  panel.style.cssText = 'position:absolute!important;bottom:70px!important;right:0!important;width:360px!important;height:520px!important;background:#fff!important;border-radius:16px!important;box-shadow:0 8px 32px rgba(0,0,0,0.15)!important;display:none!important;flex-direction:column!important;overflow:hidden!important';
+
+  var header = document.createElement('div');
+  panel.appendChild(header);
+  header.style.cssText = 'background:#3d6a73!important;color:#efece2!important;padding:14px 16px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;font-weight:600!important;font-size:15px!important';
+
+  var headerTitle = document.createElement('span');
+  headerTitle.textContent = '💬 Ask Youssef';
+  header.appendChild(headerTitle);
+
+  var closeBtn = document.createElement('span');
+  closeBtn.textContent = '✕';
+  closeBtn.style.cssText = 'cursor:pointer;font-size:20px;line-height:1';
+  closeBtn.onclick = function(e){
+    e.stopPropagation();
+    panel.style.display = 'none';
+    bubble.style.display = 'flex';
+  };
+  header.appendChild(closeBtn);
+
+  var msgs = document.createElement('div');
+  panel.appendChild(msgs);
+  msgs.style.cssText = 'flex:1!important;overflow-y:auto!important;padding:12px!important;background:#f8f7f2!important;display:flex!important;flex-direction:column!important;gap:8px!important';
+
+  var welcome = document.createElement('div');
+  msgs.appendChild(welcome);
+  welcome.style.cssText = 'background:#d8e1da!important;padding:10px 14px!important;border-radius:12px 12px 12px 0!important;max-width:85%!important;align-self:flex-start!important;font-size:14px!important;line-height:1.5!important;color:#1f2d30!important';
+  welcome.innerHTML = 'Hi! I am Youssef\'s AI assistant. I can tell you about his instructional design services, H5P interactive content, self-hosted Moodle LMS deployments, and how he works with clients. What would you like to know?';
+
+  var inputRow = document.createElement('div');
+  panel.appendChild(inputRow);
+  inputRow.style.cssText = 'padding:10px!important;border-top:1px solid #e0e0e0!important;display:flex!important;gap:8px!important;background:#fff!important';
+
+  var input = document.createElement('input');
+  inputRow.appendChild(input);
+  input.placeholder = 'Ask about Youssef\'s services...';
+  input.style.cssText = 'flex:1!important;padding:10px 14px!important;border:1px solid #d0d0d0!important;border-radius:24px!important;font-size:14px!important;outline:none!important;font-family:Inter,system-ui,sans-serif!important';
+
+  var sendBtn = document.createElement('button');
+  inputRow.appendChild(sendBtn);
+  sendBtn.textContent = '➤';
+  sendBtn.style.cssText = 'background:#3d6a73!important;color:#fff!important;border:none!important;border-radius:50%!important;width:40px!important;height:40px!important;cursor:pointer!important;font-size:16px!important;flex-shrink:0!important';
+
+  bubble.onclick = function(){
+    if (panel.style.display === 'none' || panel.style.display === '') {
+      panel.style.display = 'flex';
+      this.style.display = 'none';
+    } else {
+      panel.style.display = 'none';
+      this.style.display = 'flex';
+    }
+  };
+
+  async function sendMsg(){
+    var msg = input.value.trim();
+    if(!msg) return;
+    input.value = '';
+
+    var userDiv = document.createElement('div');
+    userDiv.style.cssText = 'background:#3d6a73!important;color:#efece2!important;padding:10px 14px!important;border-radius:12px 12px 0 12px!important;max-width:85%!important;align-self:flex-end!important;font-size:14px!important;line-height:1.5!important';
+    userDiv.textContent = msg;
+    msgs.appendChild(userDiv);
+
+    var typing = document.createElement('div');
+    typing.style.cssText = 'background:#d8e1da!important;padding:10px 14px!important;border-radius:12px 12px 12px 0!important;max-width:85%!important;align-self:flex-start!important;font-size:14px!important;color:#1f2d30!important';
+    typing.textContent = 'Thinking...';
+    msgs.appendChild(typing);
+    msgs.scrollTop = msgs.scrollHeight;
+
+    var reply;
+    try{
+      var resp = await fetch('http://167.71.66.198:8888',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({message:msg, origin:'portfolio'})
+      });
+      var data = await resp.json();
+      reply = data.reply || 'I can tell you more about Youssef\'s work. Try asking about his services!';
+    }catch(e){
+      reply = 'I\'m momentarily offline. Youssef builds interactive e-learning with H5P and self-hosted Moodle. Reach him at barjyoussef5@gmail.com or book a call.';
+    }
+
+    typing.remove();
+
+    var aiDiv = document.createElement('div');
+    aiDiv.style.cssText = 'background:#d8e1da!important;padding:10px 14px!important;border-radius:12px 12px 12px 0!important;max-width:85%!important;align-self:flex-start!important;font-size:14px!important;line-height:1.5!important;color:#1f2d30!important';
+    aiDiv.textContent = reply;
+    msgs.appendChild(aiDiv);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  input.onkeydown = function(e){ if(e.key==='Enter') sendMsg(); };
+  sendBtn.onclick = sendMsg;
+})();
 </script>
 
 </body>
