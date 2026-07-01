@@ -19,7 +19,7 @@ export default async function handler(req, res) {
         'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
       },
       body: JSON.stringify({
-        model: 'DeepSeek-R1',
+        model: 'gpt-4o-mini',
         messages: [
           { role: 'system', content: SYSTEM_PROMPT },
           { role: 'user', content: message },
@@ -31,7 +31,12 @@ export default async function handler(req, res) {
     });
 
     const data = await resp.json();
-    const reply = data.choices?.[0]?.message?.content || "I'm not sure about that. Want to book a call with Youssef? cal.com/youssef-barj-meqh5v/30min";
+    let reply = data.choices?.[0]?.message?.content || "I'm not sure about that. Want to book a call with Youssef? cal.com/youssef-barj-meqh5v/30min";
+    // Strip thinking tags from reasoning models
+    reply = reply.replace(/<think>[\s\S]*?<\/think>/g, '').trim();
+    // Also strip any HTML/XML-like tags that slip through
+    reply = reply.replace(/<\/?[a-zA-Z]+>/g, '');
+    if (!reply) reply = "I'm not sure about that. Want to book a call with Youssef? cal.com/youssef-barj-meqh5v/30min";
     return res.json({ reply });
   } catch (e) {
     return res.json({
