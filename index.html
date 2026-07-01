@@ -86,80 +86,64 @@
 <!-- PORTFOLIO -->
 <main id="portfolio">
 
-    <!-- PROJECT 1 -->
+    <!-- PROJECT 1: COMPLIANCE -->
     <section class="max-w-5xl mx-auto px-5 sm:px-8 pt-4 pb-16">
-        <h2 class="font-serif text-3xl sm:text-4xl text-center mb-12">Interactive Course Design</h2>
+        <h2 class="font-serif text-3xl sm:text-4xl text-center mb-12">Policy & Compliance Training</h2>
         <div class="grid md:grid-cols-2 gap-10 items-center">
-            <div class="rounded-2xl overflow-hidden shadow-xl bg-cream p-8 cursor-zoom-in" onclick="openLightbox('project-course.png')">
-                <img src="project-course.png" alt="Interactive e-learning course built in H5P" class="w-full aspect-[5/4] object-contain">
+            <div class="rounded-2xl overflow-hidden shadow-xl bg-cream p-8 cursor-zoom-in" onclick="openLightbox('rfq-gdpr-course.png')">
+                <img src="rfq-gdpr-course.png" alt="GDPR compliance training course on Moodle LMS" class="w-full aspect-[5/4] object-contain">
             </div>
             <div class="text-[15px] leading-relaxed">
-                <h3 class="font-semibold text-lg mb-3">Engaging, interactive eLearning</h3>
+                <h3 class="font-semibold text-lg mb-3">GDPR Training: From dense regulation to practical action</h3>
                 <p class="mb-4 text-ink/80">
-                    Compliance and onboarding training that teams work through, not click past. I take your policies and source material and turn them into interactive, scenario-based modules that are quick to roll out, easy to update, and accessible from anywhere. Built-in analytics let L&D and HR track progress and completion in real time, see exactly who needs support, and tighten the parts of a course that aren't landing.
+                    Self-paced compliance course covering the 7 GDPR principles, data subject rights, key terminology, breach response procedures, and scenario-based assessment. Built on Moodle with H5P interactive content: accordions for principles, drag-the-words for rights, flashcards for terminology, fill-in-the-blanks for breach response, and a final scenario quiz.
                 </p>
                 <p class="mb-4 text-ink/80">
-                    Bespoke to the role means faster learning and better retention, so training translates straight back into how people actually work.
+                    Dense regulatory material translated into clear, actionable training that drives behavior change. Every policy point followed by a concrete example of what it looks like in practice.
                 </p>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Onboarding</span>
-                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Compliance &amp; GDPR</span>
-                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Sales enablement</span>
-                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Operations &amp; SOPs</span>
-                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Certifications</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Compliance</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">GDPR</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Policy Training</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Scenario-Based</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">SCORM/xAPI</span>
                 </div>
-                <p class="mb-2"><span class="font-semibold">Audience:</span> L&amp;D and HR teams in regulated and fast-scaling organizations.</p>
-                <p class="mb-2"><span class="font-semibold">Responsibilities:</span> Instructional design, storyboarding, eLearning development, assessment and certification design.</p>
-                <p class="mb-6"><span class="font-semibold">Tools Used:</span> H5P, Articulate, Figma, SCORM/xAPI.</p>
-                <button onclick="openModal('h5pModal')" class="inline-block bg-teal text-cream font-semibold px-7 py-2.5 rounded-full hover:bg-teal-dark transition">Learn More</button>
+                <p class="mb-2"><span class="font-semibold">Topic:</span> Data privacy regulation, GDPR compliance, breach response</p>
+                <p class="mb-2"><span class="font-semibold">Audience:</span> All employees in organizations handling personal data</p>
+                <p class="mb-6"><span class="font-semibold">Tools Used:</span> Moodle LMS, H5P (Accordion, DragText, Flashcards, Blanks, SingleChoiceSet), Absorb-compatible SCORM export</p>
+                <a href="https://moodle.youssefbarj.com/course/view.php?id=6" target="_blank" rel="noopener" class="inline-block bg-teal text-cream font-semibold px-7 py-2.5 rounded-full hover:bg-teal-dark transition">View Live Course →</a>
             </div>
         </div>
     </section>
 
-    <!-- H5P CONTENT TYPES MODAL -->
-    <div id="h5pModal" class="modal fixed inset-0 z-[60] hidden items-center justify-center p-2 bg-black/70 backdrop-blur-sm">
-        <div class="bg-cream rounded-2xl w-full h-[95vh] max-w-7xl overflow-hidden shadow-2xl relative flex flex-col">
-            <button onclick="document.getElementById('h5pFrame').src=H5P_URL" aria-label="Back" class="absolute top-3 left-3 z-10 w-9 h-9 rounded-full bg-teal text-cream flex items-center justify-center hover:bg-teal-dark transition shadow-lg">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5m7-7l-7 7 7 7"/></svg>
-            </button>
-            <button onclick="closeModal('h5pModal')" class="absolute top-3 right-3 z-10 bg-teal text-cream font-semibold px-4 py-2 rounded-full hover:bg-teal-dark transition flex items-center gap-1.5 shadow-lg">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                Close
-            </button>
-            <div class="flex-1 overflow-hidden">
-                <iframe id="h5pFrame" title="H5P Content Types" class="w-full border-0" style="height:calc(100% + 600px);margin-top:-130px;" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
-            </div>
-        </div>
-    </div>
-
-    <!-- subtle divider -->
     <div class="max-w-5xl mx-auto px-5 sm:px-8"><div class="h-px bg-ink/15"></div></div>
 
-    <!-- PROJECT 2 -->
+    <!-- PROJECT 2: SOFT SKILLS -->
     <section class="max-w-5xl mx-auto px-5 sm:px-8 pt-16 pb-20">
-        <h2 class="font-serif text-3xl sm:text-4xl text-center mb-12">Self-Hosted Moodle LMS</h2>
+        <h2 class="font-serif text-3xl sm:text-4xl text-center mb-12">Soft Skills & Professional Development</h2>
         <div class="grid md:grid-cols-2 gap-10 items-center">
-            <div class="rounded-2xl overflow-hidden shadow-xl bg-cream p-8 cursor-zoom-in" onclick="openLightbox('project-moodle.png')">
-                <img src="project-moodle.png" alt="Self-hosted Moodle LMS dashboard" class="w-full aspect-[5/4] object-contain">
+            <div class="rounded-2xl overflow-hidden shadow-xl bg-cream p-8 cursor-zoom-in" onclick="openLightbox('rfq-onboarding-course.png')">
+                <img src="rfq-onboarding-course.png" alt="Employee onboarding course on Moodle LMS" class="w-full aspect-[5/4] object-contain">
             </div>
             <div class="text-[15px] leading-relaxed">
-                <h3 class="font-semibold text-lg mb-3">A private LMS you fully own</h3>
+                <h3 class="font-semibold text-lg mb-3">New Employee Onboarding: Your First 90 Days</h3>
                 <p class="mb-4 text-ink/80">
-                    I set up, configure, and host a dedicated Moodle LMS on a private EU server, so your courses and your learner data stay entirely under your control. That covers course architecture, enrollment, live progress analytics, audit-ready completion reports, and automatic certificates, with H5P content embedded directly and BigBlueButton wired in for live virtual classrooms.
+                    Self-paced onboarding course that takes new hires from orientation to full productivity. Five structured modules: Company Values, Policies and Procedures, Essential Tools and Platforms, Team Communication, and a Final Assessment. Each module includes interactive H5P activities — true/false checks, fill-in-the-blanks, dialog cards for tools, and scenario-based decision-making.
                 </p>
                 <p class="mb-4 text-ink/80">
-                    No SaaS lock-in, no per-seat licensing, no surprise renewal. You keep the platform and everything in it.
+                    Goes beyond information delivery to build real skills. Learners practice tool selection, policy application, and values-based decision-making through branching scenarios with consequences for different choices.
                 </p>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">LMS setup</span>
-                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Live analytics</span>
-                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Virtual classrooms</span>
-                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Data sovereignty</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Onboarding</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Soft Skills</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">People & Culture</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Branching Scenarios</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">SCORM/xAPI</span>
                 </div>
-                <p class="mb-2"><span class="font-semibold">Audience:</span> Organizations that need a trackable, compliant LMS without recurring SaaS fees.</p>
-                <p class="mb-2"><span class="font-semibold">Responsibilities:</span> Server setup, Moodle administration, course architecture, analytics and reporting, virtual classroom integration.</p>
-                <p class="mb-6"><span class="font-semibold">Tools Used:</span> Moodle, Linux VPS, H5P, BigBlueButton, SCORM/xAPI.</p>
-                <a href="http://51.170.143.201" target="_blank" rel="noopener" class="inline-block bg-teal text-cream font-semibold px-7 py-2.5 rounded-full hover:bg-teal-dark transition">Learn More</a>
+                <p class="mb-2"><span class="font-semibold">Topic:</span> Employee onboarding, company values, tools training, policy familiarization</p>
+                <p class="mb-2"><span class="font-semibold">Audience:</span> New hires across all departments and geographies</p>
+                <p class="mb-6"><span class="font-semibold">Tools Used:</span> Moodle LMS, H5P (DialogCards, TrueFalse, Blanks, SingleChoiceSet, Accordion), Absorb-compatible SCORM export</p>
+                <a href="https://moodle.youssefbarj.com/course/view.php?id=7" target="_blank" rel="noopener" class="inline-block bg-teal text-cream font-semibold px-7 py-2.5 rounded-full hover:bg-teal-dark transition">View Live Course →</a>
             </div>
         </div>
     </section>
@@ -191,7 +175,7 @@
                 <p class="mb-2"><span class="font-semibold">Audience:</span> L&amp;D and HR teams spending too many hours on Moodle admin who want to reclaim their week for strategy, content, and people.</p>
                 <p class="mb-2"><span class="font-semibold">Responsibilities:</span> AI agent deployment on client infrastructure, LMS automation workflows, natural-language command configuration, monitoring, backup scheduling.</p>
                 <p class="mb-6"><span class="font-semibold">Tools Used:</span> Hermes Agent, Moodle API, Linux VPS, systemd, Telegram/Slack gateway.</p>
-                <a href="https://t.me/HermesVPS_luxaltbot" target="_blank" rel="noopener" class="inline-block bg-teal text-cream font-semibold px-7 py-2.5 rounded-full hover:bg-teal-dark transition mr-3">Talk to the agent on Telegram →</a>
+                <a href="#contact" class="inline-block bg-teal text-cream font-semibold px-7 py-2.5 rounded-full hover:bg-teal-dark transition mr-3">Book a demo →</a>
                 <a href="#contact" class="inline-block border border-teal text-teal font-semibold px-7 py-2.5 rounded-full hover:bg-teal/10 transition">Learn More</a>
             </div>
         </div>
@@ -207,7 +191,7 @@
 
             <h3 class="font-serif text-xl mb-3 border-b border-ink/20 pb-1 inline-block">Professional</h3>
             <p class="text-[15px] leading-relaxed text-ink/85 mb-6">
-                I'm an instructional designer who builds engaging, trackable e-learning for organizations that want real results without enterprise licensing costs. I work from your own policies and subject-matter expertise, turning them into interactive courses with built-in analytics, completion tracking, and certification. My stack is H5P paired with self-hosted Moodle, the most widely used open-source LMS in the world, running on private European infrastructure so your data stays sovereign. The aim is always the same: learning that changes how people work, not slides they forget.
+                I'm an instructional designer who builds engaging, trackable e-learning for organizations that want real results without enterprise licensing costs. I help you expand your course library with content that meets your organizational standards and supports staff development. My courses cover technical compliance areas (information security, asset disposal, regulatory policy) and people-focused skills (prioritization, delegation, management competencies). I take projects from kick-off through launch: reviewing your existing materials, interviewing subject-matter experts, drafting outlines and scripts for your sign-off, building interactive content in Absorb Create or SCORM-compatible formats, and managing structured review cycles with QA at every stage. My stack is H5P paired with self-hosted Moodle, the most widely used open-source LMS in the world, running on private European infrastructure so your data stays sovereign. The aim is always the same: learning that changes how people work, not slides they forget.
             </p>
 
             <h3 class="font-serif text-xl mb-3 border-b border-ink/20 pb-1 inline-block">Personal</h3>
@@ -354,11 +338,11 @@ function closeLightbox(){
 <div id="chatWidget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
     <div id="chatBox" class="hidden bg-cream text-ink rounded-2xl shadow-2xl mb-3 w-80 max-w-[calc(100vw-2rem)] overflow-hidden flex flex-col" style="height:380px">
         <div class="bg-teal text-cream px-4 py-3 flex items-center justify-between">
-            <span class="font-semibold text-sm">Talk to Hermes</span>
+            <span class="font-semibold text-sm">Ask a Question</span>
             <button onclick="toggleChat()" aria-label="Close chat" class="text-cream/70 hover:text-cream">&times;</button>
         </div>
         <div id="chatMessages" class="flex-1 overflow-y-auto p-4 space-y-3 text-sm">
-            <div class="bg-teal/10 rounded-xl p-3 text-ink/80">Hey! I'm Hermes, Youssef's AI agent. Ask me anything about LMS automation, H5P courses, or Moodle hosting.</div>
+            <div class="bg-teal/10 rounded-xl p-3 text-ink/80">Hi! I'm an AI assistant. Ask me anything about LMS courses, H5P interactive content, or Moodle hosting.</div>
         </div>
         <form onsubmit="sendChat(event)" class="border-t border-ink/10 p-3 flex gap-2">
             <input id="chatInput" type="text" placeholder="Type a message..." class="flex-1 bg-sage/50 rounded-full px-4 py-2 text-sm border-0 outline-none focus:ring-2 ring-teal/30" autocomplete="off">
@@ -404,121 +388,4 @@ async function sendChat(e){
 function escHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 </script>
 
-<!-- PORTFOLIO AI CHAT WIDGET -->
-<script>
-(function(){
-  var style = document.createElement('style');
-  style.textContent = '.ph-hidden{display:none!important}';
-  document.head.appendChild(style);
-
-  var wrapper = document.createElement('div');
-  wrapper.style.cssText = 'position:fixed!important;bottom:24px!important;right:24px!important;z-index:99999!important;font-family:Inter,system-ui,sans-serif!important';
-  document.body.appendChild(wrapper);
-
-  var bubble = document.createElement('div');
-  wrapper.appendChild(bubble);
-  bubble.style.cssText = 'width:56px!important;height:56px!important;border-radius:50%!important;background:#3d6a73!important;color:#efece2!important;border:none!important;cursor:pointer!important;box-shadow:0 4px 16px rgba(0,0,0,0.2)!important;font-size:24px!important;display:flex!important;align-items:center!important;justify-content:center!important;transition:transform 0.2s!important';
-  bubble.textContent = '💬';
-  bubble.onmouseover = function(){ this.style.transform='scale(1.1)'; };
-  bubble.onmouseout = function(){ this.style.transform='scale(1)'; };
-
-  var panel = document.createElement('div');
-  wrapper.appendChild(panel);
-  panel.style.cssText = 'position:absolute!important;bottom:70px!important;right:0!important;width:360px!important;height:520px!important;background:#fff!important;border-radius:16px!important;box-shadow:0 8px 32px rgba(0,0,0,0.15)!important;display:none!important;flex-direction:column!important;overflow:hidden!important';
-
-  var header = document.createElement('div');
-  panel.appendChild(header);
-  header.style.cssText = 'background:#3d6a73!important;color:#efece2!important;padding:14px 16px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;font-weight:600!important;font-size:15px!important';
-
-  var headerTitle = document.createElement('span');
-  headerTitle.textContent = '💬 Ask Youssef';
-  header.appendChild(headerTitle);
-
-  var closeBtn = document.createElement('span');
-  closeBtn.textContent = '✕';
-  closeBtn.style.cssText = 'cursor:pointer;font-size:20px;line-height:1';
-  closeBtn.onclick = function(e){
-    e.stopPropagation();
-    panel.style.display = 'none';
-    bubble.style.display = 'flex';
-  };
-  header.appendChild(closeBtn);
-
-  var msgs = document.createElement('div');
-  panel.appendChild(msgs);
-  msgs.style.cssText = 'flex:1!important;overflow-y:auto!important;padding:12px!important;background:#f8f7f2!important;display:flex!important;flex-direction:column!important;gap:8px!important';
-
-  var welcome = document.createElement('div');
-  msgs.appendChild(welcome);
-  welcome.style.cssText = 'background:#d8e1da!important;padding:10px 14px!important;border-radius:12px 12px 12px 0!important;max-width:85%!important;align-self:flex-start!important;font-size:14px!important;line-height:1.5!important;color:#1f2d30!important';
-  welcome.innerHTML = 'Hi! I am Youssef\'s AI assistant. I can tell you about his instructional design services, H5P interactive content, self-hosted Moodle LMS deployments, and how he works with clients. What would you like to know?';
-
-  var inputRow = document.createElement('div');
-  panel.appendChild(inputRow);
-  inputRow.style.cssText = 'padding:10px!important;border-top:1px solid #e0e0e0!important;display:flex!important;gap:8px!important;background:#fff!important';
-
-  var input = document.createElement('input');
-  inputRow.appendChild(input);
-  input.placeholder = 'Ask about Youssef\'s services...';
-  input.style.cssText = 'flex:1!important;padding:10px 14px!important;border:1px solid #d0d0d0!important;border-radius:24px!important;font-size:14px!important;outline:none!important;font-family:Inter,system-ui,sans-serif!important';
-
-  var sendBtn = document.createElement('button');
-  inputRow.appendChild(sendBtn);
-  sendBtn.textContent = '➤';
-  sendBtn.style.cssText = 'background:#3d6a73!important;color:#fff!important;border:none!important;border-radius:50%!important;width:40px!important;height:40px!important;cursor:pointer!important;font-size:16px!important;flex-shrink:0!important';
-
-  bubble.onclick = function(){
-    if (panel.style.display === 'none' || panel.style.display === '') {
-      panel.style.display = 'flex';
-      this.style.display = 'none';
-    } else {
-      panel.style.display = 'none';
-      this.style.display = 'flex';
-    }
-  };
-
-  async function sendMsg(){
-    var msg = input.value.trim();
-    if(!msg) return;
-    input.value = '';
-
-    var userDiv = document.createElement('div');
-    userDiv.style.cssText = 'background:#3d6a73!important;color:#efece2!important;padding:10px 14px!important;border-radius:12px 12px 0 12px!important;max-width:85%!important;align-self:flex-end!important;font-size:14px!important;line-height:1.5!important';
-    userDiv.textContent = msg;
-    msgs.appendChild(userDiv);
-
-    var typing = document.createElement('div');
-    typing.style.cssText = 'background:#d8e1da!important;padding:10px 14px!important;border-radius:12px 12px 12px 0!important;max-width:85%!important;align-self:flex-start!important;font-size:14px!important;color:#1f2d30!important';
-    typing.textContent = 'Thinking...';
-    msgs.appendChild(typing);
-    msgs.scrollTop = msgs.scrollHeight;
-
-    var reply;
-    try{
-      var resp = await fetch('/api/chat',{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({message:msg})
-      });
-      var data = await resp.json();
-      reply = data.reply || 'I can tell you more about Youssef\'s work. Try asking about his services!';
-    }catch(e){
-      reply = 'I\'m momentarily offline. Youssef builds interactive e-learning with H5P and self-hosted Moodle. Reach him at barjyoussef5@gmail.com or book a call.';
-    }
-
-    typing.remove();
-
-    var aiDiv = document.createElement('div');
-    aiDiv.style.cssText = 'background:#d8e1da!important;padding:10px 14px!important;border-radius:12px 12px 12px 0!important;max-width:85%!important;align-self:flex-start!important;font-size:14px!important;line-height:1.5!important;color:#1f2d30!important';
-    aiDiv.textContent = reply;
-    msgs.appendChild(aiDiv);
-    msgs.scrollTop = msgs.scrollHeight;
-  }
-
-  input.onkeydown = function(e){ if(e.key==='Enter') sendMsg(); };
-  sendBtn.onclick = sendMsg;
-})();
-</script>
-
 </body>
-</html>
