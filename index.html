@@ -86,64 +86,80 @@
 <!-- PORTFOLIO -->
 <main id="portfolio">
 
-    <!-- PROJECT 1: COMPLIANCE -->
+    <!-- PROJECT 1 -->
     <section class="max-w-5xl mx-auto px-5 sm:px-8 pt-4 pb-16">
-        <h2 class="font-serif text-3xl sm:text-4xl text-center mb-12">Policy & Compliance Training</h2>
+        <h2 class="font-serif text-3xl sm:text-4xl text-center mb-12">Interactive Course Design</h2>
         <div class="grid md:grid-cols-2 gap-10 items-center">
-            <div class="rounded-2xl overflow-hidden shadow-xl bg-cream p-8 cursor-zoom-in" onclick="openLightbox('rfq-gdpr-course.png')">
-                <img src="rfq-gdpr-course.png" alt="GDPR compliance training course on Moodle LMS" class="w-full aspect-[5/4] object-contain">
+            <div class="rounded-2xl overflow-hidden shadow-xl bg-cream p-8 cursor-zoom-in" onclick="openLightbox('project-course.png')">
+                <img src="project-course.png" alt="Interactive e-learning course built in H5P" class="w-full aspect-[5/4] object-contain">
             </div>
             <div class="text-[15px] leading-relaxed">
-                <h3 class="font-semibold text-lg mb-3">GDPR Training: From dense regulation to practical action</h3>
+                <h3 class="font-semibold text-lg mb-3">Engaging, interactive eLearning</h3>
                 <p class="mb-4 text-ink/80">
-                    Self-paced compliance course covering the 7 GDPR principles, data subject rights, key terminology, breach response procedures, and scenario-based assessment. Built on Moodle with H5P interactive content: accordions for principles, drag-the-words for rights, flashcards for terminology, fill-in-the-blanks for breach response, and a final scenario quiz.
+                    Compliance and onboarding training that teams work through, not click past. I take your policies and source material and turn them into interactive, scenario-based modules that are quick to roll out, easy to update, and accessible from anywhere. Built-in analytics let L&D and HR track progress and completion in real time, see exactly who needs support, and tighten the parts of a course that aren't landing.
                 </p>
                 <p class="mb-4 text-ink/80">
-                    Dense regulatory material translated into clear, actionable training that drives behavior change. Every policy point followed by a concrete example of what it looks like in practice.
+                    Bespoke to the role means faster learning and better retention, so training translates straight back into how people actually work.
                 </p>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Compliance</span>
-                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">GDPR</span>
-                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Policy Training</span>
-                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Scenario-Based</span>
-                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">SCORM/xAPI</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Onboarding</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Compliance &amp; GDPR</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Sales enablement</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Operations &amp; SOPs</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Certifications</span>
                 </div>
-                <p class="mb-2"><span class="font-semibold">Topic:</span> Data privacy regulation, GDPR compliance, breach response</p>
-                <p class="mb-2"><span class="font-semibold">Audience:</span> All employees in organizations handling personal data</p>
-                <p class="mb-6"><span class="font-semibold">Tools Used:</span> Moodle LMS, H5P (Accordion, DragText, Flashcards, Blanks, SingleChoiceSet), Absorb-compatible SCORM export</p>
-                <a href="https://moodle.youssefbarj.com/course/view.php?id=6" target="_blank" rel="noopener" class="inline-block bg-teal text-cream font-semibold px-7 py-2.5 rounded-full hover:bg-teal-dark transition">View Live Course →</a>
+                <p class="mb-2"><span class="font-semibold">Audience:</span> L&amp;D and HR teams in regulated and fast-scaling organizations.</p>
+                <p class="mb-2"><span class="font-semibold">Responsibilities:</span> Instructional design, storyboarding, eLearning development, assessment and certification design.</p>
+                <p class="mb-6"><span class="font-semibold">Tools Used:</span> H5P, Articulate, Figma, SCORM/xAPI.</p>
+                <button onclick="openModal('h5pModal')" class="inline-block bg-teal text-cream font-semibold px-7 py-2.5 rounded-full hover:bg-teal-dark transition">Learn More</button>
             </div>
         </div>
     </section>
 
+    <!-- H5P CONTENT TYPES MODAL -->
+    <div id="h5pModal" class="modal fixed inset-0 z-[60] hidden items-center justify-center p-2 bg-black/70 backdrop-blur-sm">
+        <div class="bg-cream rounded-2xl w-full h-[95vh] max-w-7xl overflow-hidden shadow-2xl relative flex flex-col">
+            <button onclick="document.getElementById('h5pFrame').src=H5P_URL" aria-label="Back" class="absolute top-3 left-3 z-10 w-9 h-9 rounded-full bg-teal text-cream flex items-center justify-center hover:bg-teal-dark transition shadow-lg">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5m7-7l-7 7 7 7"/></svg>
+            </button>
+            <button onclick="closeModal('h5pModal')" class="absolute top-3 right-3 z-10 bg-teal text-cream font-semibold px-4 py-2 rounded-full hover:bg-teal-dark transition flex items-center gap-1.5 shadow-lg">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                Close
+            </button>
+            <div class="flex-1 overflow-hidden">
+                <iframe id="h5pFrame" title="H5P Content Types" class="w-full border-0" style="height:calc(100% + 600px);margin-top:-130px;" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- subtle divider -->
     <div class="max-w-5xl mx-auto px-5 sm:px-8"><div class="h-px bg-ink/15"></div></div>
 
-    <!-- PROJECT 2: SOFT SKILLS -->
+    <!-- PROJECT 2 -->
     <section class="max-w-5xl mx-auto px-5 sm:px-8 pt-16 pb-20">
-        <h2 class="font-serif text-3xl sm:text-4xl text-center mb-12">Soft Skills & Professional Development</h2>
+        <h2 class="font-serif text-3xl sm:text-4xl text-center mb-12">Self-Hosted Moodle LMS</h2>
         <div class="grid md:grid-cols-2 gap-10 items-center">
-            <div class="rounded-2xl overflow-hidden shadow-xl bg-cream p-8 cursor-zoom-in" onclick="openLightbox('rfq-onboarding-course.png')">
-                <img src="rfq-onboarding-course.png" alt="Employee onboarding course on Moodle LMS" class="w-full aspect-[5/4] object-contain">
+            <div class="rounded-2xl overflow-hidden shadow-xl bg-cream p-8 cursor-zoom-in" onclick="openLightbox('project-moodle.png')">
+                <img src="project-moodle.png" alt="Self-hosted Moodle LMS dashboard" class="w-full aspect-[5/4] object-contain">
             </div>
             <div class="text-[15px] leading-relaxed">
-                <h3 class="font-semibold text-lg mb-3">New Employee Onboarding: Your First 90 Days</h3>
+                <h3 class="font-semibold text-lg mb-3">A private LMS you fully own</h3>
                 <p class="mb-4 text-ink/80">
-                    Self-paced onboarding course that takes new hires from orientation to full productivity. Five structured modules: Company Values, Policies and Procedures, Essential Tools and Platforms, Team Communication, and a Final Assessment. Each module includes interactive H5P activities — true/false checks, fill-in-the-blanks, dialog cards for tools, and scenario-based decision-making.
+                    I set up, configure, and host a dedicated Moodle LMS on a private EU server, so your courses and your learner data stay entirely under your control. That covers course architecture, enrollment, live progress analytics, audit-ready completion reports, and automatic certificates, with H5P content embedded directly and BigBlueButton wired in for live virtual classrooms.
                 </p>
                 <p class="mb-4 text-ink/80">
-                    Goes beyond information delivery to build real skills. Learners practice tool selection, policy application, and values-based decision-making through branching scenarios with consequences for different choices.
+                    No SaaS lock-in, no per-seat licensing, no surprise renewal. You keep the platform and everything in it.
                 </p>
                 <div class="flex flex-wrap gap-2 mb-5">
-                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Onboarding</span>
-                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Soft Skills</span>
-                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">People & Culture</span>
-                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Branching Scenarios</span>
-                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">SCORM/xAPI</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">LMS setup</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Live analytics</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Virtual classrooms</span>
+                    <span class="text-xs font-medium bg-teal/10 text-teal px-3 py-1 rounded-full">Data sovereignty</span>
                 </div>
-                <p class="mb-2"><span class="font-semibold">Topic:</span> Employee onboarding, company values, tools training, policy familiarization</p>
-                <p class="mb-2"><span class="font-semibold">Audience:</span> New hires across all departments and geographies</p>
-                <p class="mb-6"><span class="font-semibold">Tools Used:</span> Moodle LMS, H5P (DialogCards, TrueFalse, Blanks, SingleChoiceSet, Accordion), Absorb-compatible SCORM export</p>
-                <a href="https://moodle.youssefbarj.com/course/view.php?id=7" target="_blank" rel="noopener" class="inline-block bg-teal text-cream font-semibold px-7 py-2.5 rounded-full hover:bg-teal-dark transition">View Live Course →</a>
+                <p class="mb-2"><span class="font-semibold">Audience:</span> Organizations that need a trackable, compliant LMS without recurring SaaS fees.</p>
+                <p class="mb-2"><span class="font-semibold">Responsibilities:</span> Server setup, Moodle administration, course architecture, analytics and reporting, virtual classroom integration.</p>
+                <p class="mb-6"><span class="font-semibold">Tools Used:</span> Moodle, Linux VPS, H5P, BigBlueButton, SCORM/xAPI.</p>
+                <a href="https://moodle.youssefbarj.com" target="_blank" rel="noopener" class="inline-block bg-teal text-cream font-semibold px-7 py-2.5 rounded-full hover:bg-teal-dark transition">Learn More</a>
             </div>
         </div>
     </section>
